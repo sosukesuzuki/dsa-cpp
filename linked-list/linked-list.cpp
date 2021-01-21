@@ -22,6 +22,14 @@ void LinkedList::delete_cell(Cell *cell) {
   delete next;
 }
 void LinkedList::delete_cell_top() {}
+Cell *LinkedList::search_cell(Cell *cell, std::string data) {
+  while (cell != NULL) {
+    if (cell->data == data)
+      return cell;
+    cell = cell->pointer;
+  }
+  return NULL;
+}
 LinkedList::LinkedList(Cell *newHead) : head(newHead){};
 LinkedList::~LinkedList() { delete head; }
 

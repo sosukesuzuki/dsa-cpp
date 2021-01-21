@@ -16,6 +16,7 @@ struct LinkedList {
   void insert_cell_top(std::string data);
   void delete_cell(Cell *pointer);
   void delete_cell_top();
+  Cell *search_cell(Cell *pointer, std::string data);
   LinkedList(Cell *newHead);
   ~LinkedList();
 };
