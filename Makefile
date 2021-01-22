@@ -8,4 +8,4 @@ clean:
 test:
 	bash ./scripts/run-test.sh
 
-.PHONY: clean format
+.PHONY: clean format test
