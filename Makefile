@@ -6,6 +6,6 @@ clean:
 	rm -f ./**/*.o
 
 test:
-	sh ./scripts/run-test.sh
+	bash ./scripts/run-test.sh
 
 .PHONY: clean format

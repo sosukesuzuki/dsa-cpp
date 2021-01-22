@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 src_dir=$PWD/src
 dirs=$(ls $src_dir)
 for dir in ${dirs[@]}; do
