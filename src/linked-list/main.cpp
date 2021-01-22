@@ -1,17 +1,17 @@
 #include "linked-list.h"
-#include <string>
-#include <iostream>
 #include <cassert>
+#include <iostream>
+#include <string>
 
 std::string get_linked_list_content(LinkedList *linked_list) {
-    Cell *cell = linked_list->head;
-    std::string result = "";
-    while(cell != NULL) {
-        result += cell->data;
-        result += " ";
-        cell = cell->pointer;
-    }
-    return result;
+  Cell *cell = linked_list->head;
+  std::string result = "";
+  while (cell != NULL) {
+    result += cell->data;
+    result += " ";
+    cell = cell->pointer;
+  }
+  return result;
 }
 
 int main() {
