@@ -1,5 +1,10 @@
 gcc_options = -std=c++17 -Wall --pedantic-errors
 
+.POHONY: run
+
+run: main
+	./main
+
 main: main.o linked-list.o
 	g++ $(gcc_options) -o $@ $^
 

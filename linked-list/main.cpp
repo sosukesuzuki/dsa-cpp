@@ -1,25 +1,44 @@
 #include "linked-list.h"
 #include <string>
 #include <iostream>
+#include <cassert>
+
+std::string get_linked_list_content(LinkedList *linked_list) {
+    Cell *cell = linked_list->head;
+    std::string result = "";
+    while(cell != NULL) {
+        result += cell->data;
+        result += " ";
+        cell = cell->pointer;
+    }
+    return result;
+}
 
 int main() {
   std::string data = "1";
   Cell *cell = new Cell(data);
+  assert(cell->data == "1");
 
   LinkedList *linked_list = new LinkedList(cell);
-  display_linked_list(linked_list);
+  assert(get_linked_list_content(linked_list) == "1 ");
+
   linked_list->insert_cell(cell, "2");
-  display_linked_list(linked_list);
+  assert(get_linked_list_content(linked_list) == "1 2 ");
+
   linked_list->insert_cell(cell, "3");
-  display_linked_list(linked_list);
+  assert(get_linked_list_content(linked_list) == "1 3 2 ");
+
   linked_list->delete_cell(cell);
-  display_linked_list(linked_list);
+  assert(get_linked_list_content(linked_list) == "1 2 ");
+
+  linked_list->insert_cell_top("4");
+  assert(get_linked_list_content(linked_list) == "4 1 2 ");
+
+  linked_list->delete_cell_top();
+  assert(get_linked_list_content(linked_list) == "1 2 ");
+
   Cell *found_cell = linked_list->search_cell(cell, "2");
-  if (found_cell != NULL) {
-    std::cout << "Found cell " << found_cell->data << std::endl;
-  } else {
-    std::cout << "Cell Not Found" << std::endl;
-  }
+  assert(found_cell->data == "2");
 
   delete linked_list;
 }

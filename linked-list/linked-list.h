@@ -21,6 +21,4 @@ struct LinkedList {
   ~LinkedList();
 };
 
-void display_linked_list(LinkedList *linked_list);
-
 #endif
