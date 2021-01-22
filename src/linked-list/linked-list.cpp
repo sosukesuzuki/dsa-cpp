@@ -35,5 +35,5 @@ Cell *LinkedList::search_cell(Cell *cell, std::string data) {
   }
   return NULL;
 }
-LinkedList::LinkedList(Cell *newHead) : head(newHead){};
+LinkedList::LinkedList(Cell *newHead) : head(newHead){}
 LinkedList::~LinkedList() { delete head; }
