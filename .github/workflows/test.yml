@@ -10,6 +10,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout
+        with:
+          fetch-depth: 1
       - name: Run Tests
-        run: |
-          make test
+        run: make test
