@@ -3,8 +3,8 @@
 #include <iostream>
 #include <string>
 
-std::string get_linked_list_content(LinkedList *linked_list) {
-  Cell *cell = linked_list->head;
+std::string get_linked_list_content(linked_list::LinkedList *linked_list) {
+  linked_list::Cell *cell = linked_list->head;
   std::string result = "";
   while (cell != NULL) {
     result += cell->data;
@@ -16,10 +16,10 @@ std::string get_linked_list_content(LinkedList *linked_list) {
 
 int main() {
   std::string data = "1";
-  Cell *cell = new Cell(data);
+  linked_list::Cell *cell = new linked_list::Cell(data);
   assert(cell->data == "1");
 
-  LinkedList *linked_list = new LinkedList(cell);
+  linked_list::LinkedList *linked_list = new linked_list::LinkedList(cell);
   assert(get_linked_list_content(linked_list) == "1 ");
 
   linked_list->insert_cell(cell, "2");
@@ -37,7 +37,7 @@ int main() {
   linked_list->delete_cell_top();
   assert(get_linked_list_content(linked_list) == "1 2 ");
 
-  Cell *found_cell = linked_list->search_cell(cell, "2");
+  linked_list::Cell *found_cell = linked_list->search_cell(cell, "2");
   assert(found_cell->data == "2");
 
   delete linked_list;

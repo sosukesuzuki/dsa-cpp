@@ -2,6 +2,7 @@
 #define QUEUE_H
 #include <string>
 
+namespace queue {
 struct Queue {
 private:
   std::string *QUEUE;
@@ -15,5 +16,6 @@ public:
   Queue(const int newSize);
   ~Queue();
 };
+} // namespace queue
 
 #endif

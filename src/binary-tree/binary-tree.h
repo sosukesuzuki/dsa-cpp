@@ -3,6 +3,7 @@
 #include <functional>
 #include <string>
 
+namespace binary_tree {
 struct Node {
   Node *left;
   Node *right;
@@ -17,5 +18,6 @@ using CallBackFn = std::function<void(std::string)>;
 void preorder(Node *node, CallBackFn cb);
 void inorder(Node *node, CallBackFn cb);
 void postorder(Node *node, CallBackFn cb);
+} // namespace binary_tree
 
 #endif

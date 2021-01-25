@@ -3,7 +3,7 @@
 #include <stdexcept>
 
 int main() {
-  Queue *queue = new Queue(10);
+  queue::Queue *queue = new queue::Queue(10);
   queue->enqueue("foo");
   queue->enqueue("bar");
   queue->enqueue("baz");
@@ -12,7 +12,7 @@ int main() {
   assert(queue->dequeue() == "baz");
   delete queue;
 
-  Queue *small_queue = new Queue(0);
+  queue::Queue *small_queue = new queue::Queue(0);
   try {
     small_queue->enqueue("foo");
   } catch (std::runtime_error error) {
