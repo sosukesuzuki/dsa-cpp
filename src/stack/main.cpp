@@ -4,7 +4,7 @@
 #include <stdexcept>
 
 int main() {
-  Stack *stack = new Stack(10);
+  stack::Stack *stack = new stack::Stack(10);
   assert(stack->size == 10);
   assert(stack->top == 0);
   stack->push("foo");
@@ -15,7 +15,7 @@ int main() {
   assert(stack->pop() == "foo");
   delete stack;
 
-  Stack *small_stack = new Stack(0);
+  stack::Stack *small_stack = new stack::Stack(0);
   try {
     small_stack->push("bar");
   } catch (std::runtime_error error) {

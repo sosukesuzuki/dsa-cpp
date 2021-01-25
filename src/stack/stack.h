@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 
+namespace stack {
 struct Stack {
   int size;
   int top;
@@ -14,5 +15,6 @@ struct Stack {
   Stack(const int newSize);
   ~Stack();
 };
+} // namespace stack
 
 #endif
