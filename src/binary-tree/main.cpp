@@ -23,5 +23,11 @@ int main() {
   assert(values[2] == "baz");
   values.clear();
 
+  postorder(tree, [&values](std::string value) { values.push_back(value); });
+  assert(values[0] == "bar");
+  assert(values[1] == "baz");
+  assert(values[2] == "foo");
+  values.clear();
+
   delete tree;
 }

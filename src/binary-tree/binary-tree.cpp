@@ -27,4 +27,12 @@ void inorder(Node *node, CallBackFn cb) {
     inorder(node->right, cb);
   }
 }
-void postorder(Node *node, CallBackFn cb) {}
+void postorder(Node *node, CallBackFn cb) {
+  if (node->left != NULL) {
+    postorder(node->left, cb);
+  }
+  if (node->right != NULL) {
+    postorder(node->right, cb);
+  }
+  cb(node->value);
+}
