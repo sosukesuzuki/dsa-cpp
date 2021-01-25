@@ -7,7 +7,7 @@
 using namespace std::string_literals;
 
 int main() {
-  Node *tree = new Node("foo"s, new Node("bar"s), new Node("baz"s));
+  binary_tree::Node *tree = new binary_tree::Node("foo"s, new binary_tree::Node("bar"s), new binary_tree::Node("baz"s));
 
   std::vector<std::string> values = {};
 
