@@ -13,6 +13,7 @@ private:
 public:
   void enqueue(std::string data);
   std::string dequeue();
+  bool empty();
   Queue(const int newSize);
   ~Queue();
 };
