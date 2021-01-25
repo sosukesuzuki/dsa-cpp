@@ -3,6 +3,7 @@
 
 #include <string>
 
+namespace linked_list {
 struct Cell {
   std::string data;
   Cell *pointer;
@@ -20,5 +21,6 @@ struct LinkedList {
   LinkedList(Cell *newHead);
   ~LinkedList();
 };
+} // namespace linked_list
 
 #endif
