@@ -17,6 +17,7 @@ std::string queue::Queue::dequeue() {
   front++;
   return result;
 }
+bool queue::Queue::empty() { return rear == front; }
 queue::Queue::Queue(const int newSize)
     : QUEUE(new std::string[newSize]), rear(0), front(0), size(newSize) {}
 queue::Queue::~Queue() { delete[] QUEUE; }
