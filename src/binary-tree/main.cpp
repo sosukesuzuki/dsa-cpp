@@ -30,7 +30,7 @@ int main() {
   assert(values[2] == "foo");
   values.clear();
 
-  breadh_first_search(
+  breadth_first_search(
       tree, [&values](std::string value) { values.push_back(value); });
   assert(values[0] == "foo");
   assert(values[1] == "bar");

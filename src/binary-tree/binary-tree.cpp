@@ -38,7 +38,7 @@ void postorder(Node *node, CallBackFn cb) {
   }
   cb(node->value);
 }
-void breadh_first_search(Node *root_node, CallBackFn cb) {
+void breadth_first_search(Node *root_node, CallBackFn cb) {
   std::queue<Node *> queue;
   queue.push(root_node);
   while (!queue.empty()) {
