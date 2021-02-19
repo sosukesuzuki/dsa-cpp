@@ -1,4 +1,5 @@
 #include "binary-tree.h"
+#include <queue>
 #include <string>
 
 namespace binary_tree {
@@ -36,5 +37,20 @@ void postorder(Node *node, CallBackFn cb) {
     postorder(node->right, cb);
   }
   cb(node->value);
+}
+void breadh_first_search(Node *root_node, CallBackFn cb) {
+  std::queue<Node *> queue;
+  queue.push(root_node);
+  while (!queue.empty()) {
+    Node *node = queue.front();
+    queue.pop();
+    cb(node->value);
+    if (node->left) {
+      queue.push(node->left);
+    }
+    if (node->right) {
+      queue.push(node->right);
+    }
+  }
 }
 } // namespace binary_tree
