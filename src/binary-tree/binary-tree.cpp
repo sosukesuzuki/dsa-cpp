@@ -1,17 +1,16 @@
 #include "binary-tree.h"
 #include <string>
 
-binary_tree::Node::Node(const std::string newValue) : value(newValue) {}
-binary_tree::Node::Node(const std::string newValue, binary_tree::Node *newLeft,
-                        binary_tree::Node *newRight)
+namespace binary_tree {
+Node::Node(const std::string newValue) : value(newValue) {}
+Node::Node(const std::string newValue, Node *newLeft, Node *newRight)
     : left(newLeft), right(newRight), value(newValue) {}
-binary_tree::Node::~Node() {
+Node::~Node() {
   delete right;
   delete left;
 }
 
-void binary_tree::preorder(binary_tree::Node *node,
-                           binary_tree::CallBackFn cb) {
+void preorder(Node *node, CallBackFn cb) {
   cb(node->value);
   if (node->left != NULL) {
     preorder(node->left, cb);
@@ -20,7 +19,7 @@ void binary_tree::preorder(binary_tree::Node *node,
     preorder(node->right, cb);
   }
 }
-void binary_tree::inorder(binary_tree::Node *node, binary_tree::CallBackFn cb) {
+void inorder(Node *node, CallBackFn cb) {
   if (node->left != NULL) {
     inorder(node->left, cb);
   }
@@ -29,8 +28,7 @@ void binary_tree::inorder(binary_tree::Node *node, binary_tree::CallBackFn cb) {
     inorder(node->right, cb);
   }
 }
-void binary_tree::postorder(binary_tree::Node *node,
-                            binary_tree::CallBackFn cb) {
+void postorder(Node *node, CallBackFn cb) {
   if (node->left != NULL) {
     postorder(node->left, cb);
   }
@@ -39,3 +37,4 @@ void binary_tree::postorder(binary_tree::Node *node,
   }
   cb(node->value);
 }
+} // namespace binary_tree

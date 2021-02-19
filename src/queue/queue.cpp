@@ -2,14 +2,15 @@
 #include <stdexcept>
 #include <string>
 
-void queue::Queue::enqueue(std::string data) {
+namespace queue {
+void Queue::enqueue(std::string data) {
   if (rear > size - 1) {
     throw std::runtime_error("Queue overflow");
   }
   QUEUE[rear] = data;
   rear++;
 }
-std::string queue::Queue::dequeue() {
+std::string Queue::dequeue() {
   if (rear == front) {
     throw std::runtime_error("Queue underflow");
   }
@@ -17,7 +18,8 @@ std::string queue::Queue::dequeue() {
   front++;
   return result;
 }
-bool queue::Queue::empty() { return rear == front; }
-queue::Queue::Queue(const int newSize)
+bool Queue::empty() { return rear == front; }
+Queue::Queue(const int newSize)
     : QUEUE(new std::string[newSize]), rear(0), front(0), size(newSize) {}
-queue::Queue::~Queue() { delete[] QUEUE; }
+Queue::~Queue() { delete[] QUEUE; }
+} // namespace queue
